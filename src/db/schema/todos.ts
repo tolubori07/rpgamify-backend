@@ -1,19 +1,19 @@
 import { sql } from 'drizzle-orm';
 import { integer, sqliteTable, text } from 'drizzle-orm/sqlite-core';
-import {users} from './Users';
-
-export const notes = sqliteTable('notes', {
+import { users } from './Users'
+export const todos = sqliteTable('todos', {
   id: integer('id').primaryKey(),
-   userId: integer('user_id')
+  title: text('title').notNull(),
+  done: integer('id', { mode: 'boolean' }),
+  userId: integer('user_id')
     .notNull()
     .references(() => users.id, { onDelete: 'cascade' }),
   createdAt: text('created_at')
     .default(sql`(CURRENT_TIMESTAMP)`)
     .notNull(),
   updateAt: integer('updated_at', { mode: 'timestamp' }).$onUpdate(() => new Date()),
-  contents: text('contents').notNull()
 });
 
 
-export type InsertPost = typeof notes.$inferInsert;
-export type SelectPost = typeof notes.$inferSelect;
+export type insertTask = typeof todos.$inferInsert;
+export type selectTask = typeof todos.$inferSelect;
