@@ -94,7 +94,7 @@ app.guard(
         }
       }
       )
-      .get('/getUser', async ({ user }: {}) => {
+      .get('/getUser', async ({ user }:users) => {
         return {
           //@ts-ignore
           id: user.id,
