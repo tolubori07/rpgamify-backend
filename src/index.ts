@@ -117,10 +117,21 @@ app.guard({}, (app) =>
       };
     })
     //@ts-ignore
+<<<<<<< Updated upstream
     .post("/createtask", async ({ user,body }:any) => {
       const  {title}  = body;
       await createTask({ title: title, userId: user.id });
       return "To-do created successfully";
+=======
+    .post("/createtask", async ({ user, body }: any) => {
+      try {
+        const { title } = body;
+        await createTask({ title: title, userId: user.id });
+        return "To-do created successfully";
+      } catch (error) {
+        throw new Error(`Error: ${error}`);
+      }
+>>>>>>> Stashed changes
     }),
 );
 
