@@ -6,16 +6,16 @@
     "dev": "bun run --watch src/index.ts"
   },
   "dependencies": {
-    "@elysiajs/bearer": "^1.0.2",
-    "@elysiajs/cors": "^1.0.2",
-    "@elysiajs/jwt": "^1.0.2",
-    "@elysiajs/swagger": "^1.0.5",
+    "@elysiajs/bearer": "^1.1.2",
+    "@elysiajs/cors": "^1.1.1",
+    "@elysiajs/jwt": "^1.1.1",
+    "@elysiajs/swagger": "^1.1.5",
     "elysia": "latest",
     "jsonwebtoken": "^9.0.2"
   },
   "devDependencies": {
     "bun-types": "latest",
-    "drizzle-kit": "^0.22.6"
+    "drizzle-kit": "^0.22.8"
   },
   "module": "src/index.js"
 }

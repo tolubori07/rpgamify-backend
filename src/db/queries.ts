@@ -1,6 +1,7 @@
 import {db} from './index'
 import { users,InsertUser,SelectUser} from './schema/Users'
 import { eq } from "drizzle-orm";
+import { insertTask, selectTask, todos } from './schema/todos';
 
  
 export const checkUser= async(email:SelectUser['email'])=>{
@@ -29,4 +30,16 @@ export const getUserById= async(id:SelectUser['id'])=>{
   .from(users)
   .where(eq(users.id,id))
   return query
+}
+
+export const getTasks = async(id:selectTask['userId'])=>{ 
+  const query = await db
+    .select()
+    .from(todos)
+    .where(eq(todos.userId,id))
+    return query
+}
+
+export const createTask = async(data: insertTask)=>{
+  await db.insert(todos).values(data)
 }
