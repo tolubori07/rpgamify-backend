@@ -8,7 +8,7 @@ CREATE TABLE `notes` (
 );
 --> statement-breakpoint
 CREATE TABLE `todos` (
-	`id` integer,
+	`id` integer PRIMARY KEY NOT NULL,
 	`title` text NOT NULL,
 	`user_id` integer NOT NULL,
 	`created_at` text DEFAULT (CURRENT_TIMESTAMP) NOT NULL,
@@ -27,6 +27,9 @@ CREATE TABLE `users` (
 	`max_exp` integer DEFAULT 100 NOT NULL,
 	`level` integer DEFAULT 1 NOT NULL,
 	`gold` integer DEFAULT 100 NOT NULL,
+	`energy` integer DEFAULT 50 NOT NULL,
+	`max_energy` integer DEFAULT 50 NOT NULL,
+	`class` text DEFAULT 'Emitter' NOT NULL,
 	`created_at` text DEFAULT (CURRENT_TIMESTAMP) NOT NULL
 );
 --> statement-breakpoint

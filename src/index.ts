@@ -117,8 +117,8 @@ app.guard({}, (app) =>
       };
     })
     //@ts-ignore
-    .post("/createtask", async ({ user,body }:any) => {
-      const  {title}  = body;
+    .post("/createtask", async ({ user, body }: any) => {
+      const { title } = body;
       await createTask({ title: title, userId: user.id });
       return "To-do created successfully";
     }),

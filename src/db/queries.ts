@@ -1,7 +1,7 @@
 import {db} from './index'
 import { users,InsertUser,SelectUser} from './schema/Users'
 import { eq } from "drizzle-orm";
-import { insertTask, selectTask, todos } from './schema/todos';
+import { insertTask, selectTask, todos } from './schema/Todos';
 
  
 export const checkUser= async(email:SelectUser['email'])=>{
